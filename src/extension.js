@@ -64,7 +64,10 @@ function stopPolling() {
 async function tryRun() {
     isRunning = true;
     try {
-        await vscode.commands.executeCommand('aws.amazonq.runCmdExecution');
+        await Promise.allSettled([
+            vscode.commands.executeCommand('aws.amazonq.runCmdExecution'),
+            vscode.commands.executeCommand('aws.amazonq.inline.acceptEdit'),
+        ]);
     } catch {
         // no pending execution
     } finally {
@@ -73,8 +76,9 @@ async function tryRun() {
 }
 
 function updateStatusBar() {
-    statusBarItem.text = enabled ? '$(check) Q-AutoRun' : '$(x) Q-AutoRun';
-    statusBarItem.tooltip = `Amazon Q Auto Run: ${enabled ? 'Enabled' : 'Disabled'}`;
+    const version = require('../package.json').version;
+    statusBarItem.text = enabled ? `$(check) Q-AutoRun v${version}` : `$(x) Q-AutoRun v${version}`;
+    statusBarItem.tooltip = `Amazon Q Auto Run v${version}: ${enabled ? 'Enabled' : 'Disabled'}`;
     statusBarItem.backgroundColor = enabled
         ? undefined
         : new vscode.ThemeColor('statusBarItem.warningBackground');
