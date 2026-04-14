@@ -1,0 +1,74 @@
+{
+  "name": "amazonq-auto-accept",
+  "displayName": "Amazon Q Auto Accept",
+  "description": "Auto-accept Amazon Q agent tool execution in VS Code — no more clicking Run manually.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/amazonq-auto-accept"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/amazonq-auto-accept/issues"
+  },
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["amazon-q", "aws", "auto-accept", "agent", "productivity"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "amazonq-auto-accept.toggle",
+        "title": "Amazon Q Auto Run: Toggle On/Off"
+      },
+      {
+        "command": "amazonq-auto-accept.runOnce",
+        "title": "Amazon Q Auto Run: Run Once"
+      }
+    ],
+    "configuration": {
+      "title": "Amazon Q Auto Run",
+      "properties": {
+        "amazonqAutoAccept.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable auto-run"
+        },
+        "amazonqAutoAccept.delayMs": {
+          "type": "number",
+          "default": 800,
+          "minimum": 200,
+          "maximum": 5000,
+          "description": "Polling interval in milliseconds (200–5000)"
+        },
+        "amazonqAutoAccept.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show status bar indicator"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "amazonq-auto-accept.toggle",
+        "key": "ctrl+shift+q",
+        "mac": "cmd+shift+q"
+      },
+      {
+        "command": "amazonq-auto-accept.runOnce",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
