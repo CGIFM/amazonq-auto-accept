@@ -6,10 +6,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/amazonq-auto-accept"
+    "url": "https://github.com/CGIFM/amazonq-auto-accept"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/amazonq-auto-accept/issues"
+    "url": "https://github.com/CGIFM/amazonq-auto-accept/issues"
   },
   "engines": {
     "vscode": "^1.82.0"

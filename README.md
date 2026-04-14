@@ -15,7 +15,7 @@ A concurrency lock (`isRunning`) ensures only one approval is in-flight at a tim
 ### From VSIX (recommended)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/amazonq-auto-accept.git
+git clone https://github.com/CGIFM/amazonq-auto-accept.git
 cd amazonq-auto-accept
 npm install
 npm run package
@@ -26,7 +26,7 @@ Then in VS Code: `Extensions` → `···` → `Install from VSIX…` → select
 ### From Source (development)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/amazonq-auto-accept.git
+git clone https://github.com/CGIFM/amazonq-auto-accept.git
 cd amazonq-auto-accept
 npm install
 ```
