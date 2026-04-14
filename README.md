@@ -1,5 +1,9 @@
 # Amazon Q Auto Accept
 
+<p align="center">
+  <img src="logo.jpg" width="128" alt="Amazon Q Auto Accept">
+</p>
+
 > Auto-accept Amazon Q agent tool execution in VS Code — no more clicking **Run** manually.
 
 When [Amazon Q Developer](https://aws.amazon.com/q/developer/) runs in agent mode, it asks for user confirmation before executing shell commands. This extension automatically approves those executions, enabling a fully hands-free agentic coding workflow.

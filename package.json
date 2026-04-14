@@ -3,7 +3,9 @@
   "displayName": "Amazon Q Auto Accept",
   "description": "Auto-accept Amazon Q agent tool execution in VS Code — no more clicking Run manually.",
   "version": "1.0.0",
+  "publisher": "CGIFM",
   "license": "MIT",
+  "icon": "logo.jpg",
   "repository": {
     "type": "git",
     "url": "https://github.com/CGIFM/amazonq-auto-accept"
