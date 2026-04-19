@@ -43,9 +43,12 @@ The extension polls commands that steal focus from the chat panel.
 When [Amazon Q Developer](https://aws.amazon.com/q/developer/) runs in agent mode, it asks for confirmation before:
 
 - 🔧 **Running shell commands** → the `Run` button
-- 📝 **Editing your files** → the `Allow` button
+- 📝 **Editing your files** → the `Accept` button
+- 📁 **Reading files outside workspace** → the `Allow` button
 
-This extension **automatically clicks both** for you. Hands-free agentic coding. 🚀
+This extension **automatically clicks all of them** for you. Hands-free agentic coding. 🚀
+
+> ⚠️ **Windows only**: The `Allow` button auto-click uses Windows UI Automation (PowerShell). It does not work on macOS or Linux.
 
 ---
 
@@ -61,7 +64,7 @@ Amazon Q suggests a command
    Command executes automatically
 ```
 
-The extension polls `aws.amazonq.runCmdExecution` and `aws.amazonq.inline.acceptEdit` at a configurable interval. A concurrency lock (`isRunning`) ensures only one approval is in-flight at a time, preventing duplicate triggers.
+The extension polls `aws.amazonq.runCmdExecution` and `aws.amazonq.inline.acceptEdit` at a configurable interval. For the **Allow** button (read-only tools outside workspace), it uses **Windows UI Automation** via PowerShell to find and click the button directly in the VS Code webview. A concurrency lock (`isRunning`) ensures only one approval is in-flight at a time, preventing duplicate triggers.
 
 ---
 
